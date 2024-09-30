@@ -8,9 +8,9 @@ library Constants {
     uint256 public constant MANAGER_ROLE = 1 << 0;
     uint256 public constant VETO_COMMITTEE_ROLE = 1 << 1;
 
-    uint256 public constant SNAPSHOT_EXPIRY = 0;
-    uint256 public constant SLASHING_WINDOW = 0;
-    uint256 public constant SLASHING_VETO_WINDOW = 0;
+    uint256 public constant SNAPSHOT_EXPIRY = 7 days;
+    uint256 public constant SLASHING_WINDOW = 7 days;
+    uint256 public constant SLASHING_VETO_WINDOW = 2 days;
     uint256 public constant MIN_STAKE_UPDATE_DELAY = SLASHING_WINDOW + SLASHING_VETO_WINDOW;
     uint256 public constant MIN_WITHDRAWAL_DELAY = SLASHING_WINDOW + SLASHING_VETO_WINDOW;
 
