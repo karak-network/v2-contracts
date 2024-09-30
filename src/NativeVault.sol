@@ -509,8 +509,19 @@ contract NativeVault is ERC4626, IBeacon, Pauser, INativeVault, OwnableRoles, Re
     function _decreaseBalance(address _of, uint256 assets) internal {
         NativeVaultLib.Storage storage self = _state();
         uint256 shares = Math.min(convertToShares(assets), balanceOf(_of));
+        // Recalculate assets to account for shares math above
+        /*
+        Case for this:
+        - decrease balance request for 32 ETH
+        - user total shares amount to only 30 ETH after vault slashing
+        - recalculate shares based on min(assets value, balance of user)
+        - remaining 2 ETH has already been deducted from totalAssets on slashAssets()
+        - recalculate assets to be decreased to prevent double reduction
+        */
+        assets = convertToAssets(shares);
         _beforeWithdraw(assets, shares);
         _burn(_of, shares);
+
         self.totalAssets -= assets;
         self.ownerToNode[_of].totalRestakedETH -= assets;
         emit DecreasedBalance(self.ownerToNode[_of].totalRestakedETH);
