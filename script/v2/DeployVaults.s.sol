@@ -30,7 +30,8 @@ contract DeployVaults is Script {
         VaultConfig[] vaultData;
     }
 
-    address internal constant OPERATOR = [addr here];
+    // Add operator address here
+    address internal constant OPERATOR = 0x0000000000000000000000000000000000000000;
     string internal constant VAULT_CONFIG_PATH_PREFIX = "/script/v2/config/vault_config_";
     string internal constant ASSET_CONFIG_PATH_PREFIX = "/script/v2/config/asset_config_";
     Core internal core;
