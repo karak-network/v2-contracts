@@ -2,7 +2,7 @@
 pragma solidity ^0.8.25;
 
 import {Script, console2} from "forge-std/Script.sol";
-import {DeployCoreLocal} from "./DeployCoreLocal.sol";
+import {DeployCoreLocal} from "./DeployCoreLocal.s.sol";
 import {Core} from "../../src/Core.sol";
 import {VaultLib} from "../../src/entities/VaultLib.sol";
 import {RestakingRegistry} from "../../src/registry/RestakingRegistry.sol";
@@ -59,5 +59,20 @@ contract SetupCoreLocal is Script {
         vaults = coreProxy.deployVaults(vaultConfigs, address(0));
         vm.stopBroadcast();
         console2.log("ERC20 Vault (proxy):", address(vaults[0]));
+
+        // Write the deployment addresses to a file
+        string memory deploymentJson = string.concat(
+            '{"core":"',
+            vm.toString(address(coreProxy)),
+            '{"operator":"',
+            vm.toString(address(this)),
+            '", "vault":"',
+            vm.toString(address(vaults[0])),
+            '", "nativeVault":"',
+            vm.toString(address(nativeVault)),
+            '"}'
+        );
+
+        vm.writeFile("./anvil-deployment.json", deploymentJson);
     }
 }
