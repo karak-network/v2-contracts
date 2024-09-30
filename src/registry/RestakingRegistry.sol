@@ -111,5 +111,5 @@ contract RestakingRegistry is Ownable, Initializable {
     error UnexpectedAmtOfDots(uint256 dotCount);
     error InvalidFourthSegment(string fourthSegment);
 
-    event KnsUpdated(string indexed kns, address indexed entity, address indexed owner);
+    event KnsUpdated(string kns, address entity, address owner);
 }
