@@ -30,7 +30,7 @@ contract DeployCoreLocal is Script {
     string internal JSON_NAME = "DeployCoreLocal";
     string internal CHAIN_NAME = "anvil";
 
-    function run()
+    function run(bool isDevelopment)
         public
         returns (
             address coreImpl,
@@ -106,20 +106,24 @@ contract DeployCoreLocal is Script {
         writeAddress("NativeNode", address(nativeNodeImpl));
 
         // add native vault impl
-        vm.prank(coreProxy.owner());
-        coreProxy.allowlistVaultImpl(nativeVaultImpl);
-
-        console2.log();
-
-        address timelock = deployTimelock(TIMELOCK_PROPOSER_EXECUTOR, TIMELOCK_EXECUTOR, TIMELOCK_DELAY);
-        console2.log("Deployed timelock", address(timelock));
-        writeAddress("Timelock", address(timelock));
-        console2.log();
-
         vm.startBroadcast(coreProxy.owner());
-        coreProxy.transferOwnership(timelock);
+        coreProxy.allowlistVaultImpl(nativeVaultImpl);
         vm.stopBroadcast();
-        writeJson();
+
+        console2.log();
+
+        if (!isDevelopment) {
+            address timelock = deployTimelock(TIMELOCK_PROPOSER_EXECUTOR, TIMELOCK_EXECUTOR, TIMELOCK_DELAY);
+            console2.log("Deployed timelock", address(timelock));
+            writeAddress("Timelock", address(timelock));
+            console2.log();
+
+            vm.startBroadcast(coreProxy.owner());
+            coreProxy.transferOwnership(timelock);
+            vm.stopBroadcast();
+            writeJson();
+        }
+
         testERC20Addr = address(testERC20);
     }
 
