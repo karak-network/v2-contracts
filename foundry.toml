@@ -8,10 +8,10 @@ fs_permissions = [
     { access = "read", path = "./test/fixtures" },
     { access = "read-write", path = "./deployments/anvil/contracts.json" },
     { access = "read-write", path = "./script/v2/config" },
+    { access = "read-write", path = "./anvil-deployment.json" },
 ]
 via_ir = true
 evm_version = "cancun"
-# TODO: Enable before pushing to main
 optimizer = true
 optimizer_runs = 1_000
 solc = "0.8.25"

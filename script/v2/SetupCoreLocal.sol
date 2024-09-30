@@ -53,5 +53,20 @@ contract SetupCoreLocal {
 
         vaults = coreProxy.deployVaults(vaultConfigs, address(0));
         console2.log("ERC20 Vault (proxy):", address(vaults[0]));
+
+        // Write the deployment addresses to a file
+        string memory deploymentJson = string.concat(
+            '{"core":"',
+            vm.toString(address(coreProxy)),
+            '{"operator":"',
+            vm.toString(address(this)),
+            '", "vault":"',
+            vm.toString(address(vaults[0])),
+            '", "nativeVault":"',
+            vm.toString(address(nativeVault)),
+            '"}'
+        );
+
+        vm.writeFile("./anvil-deployment.json", deploymentJson);
     }
 }
