@@ -19,6 +19,6 @@ EXPOSE 8545
 # Start Anvil and deploy contracts
 CMD ["anvil --host 0.0.0.0 & \
     sleep 10 && \
-    forge script script/v2/SetupCoreLocal.sol --broadcast --rpc-url http://localhost:8545 --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80 --code-size-limit 100000 && \
+    forge script script/v2/SetupCoreLocal.s.sol --broadcast --rpc-url http://localhost:8545 --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80 --code-size-limit 100000 && \
     wait \
     "]

@@ -2,7 +2,7 @@
 pragma solidity ^0.8.25;
 
 import {Script, console2} from "forge-std/Script.sol";
-import {DeployCoreLocal} from "./DeployCoreLocal.sol";
+import {DeployCoreLocal} from "./DeployCoreLocal.s.sol";
 import {Core} from "../../src/Core.sol";
 import {VaultLib} from "../../src/entities/VaultLib.sol";
 import {RestakingRegistry} from "../../src/registry/RestakingRegistry.sol";
