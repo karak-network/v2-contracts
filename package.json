@@ -3,12 +3,11 @@
 	"version": "0.0.0",
 	"description": "",
 	"scripts": {
-		"build:dev": "forge build --ast",
+		"build": "forge build --ast",
 		"clean": "forge clean",
 		"test": "forge test",
 		"setup:contracts": "forge script script/v2/SetupCoreLocal.sol --broadcast --rpc-url http://localhost:8545 --code-size-limit 100000",
-		"dev": "anvil & pnpm setup:contracts",
-		"build": "pnpm build:dev"
+		"dev": "anvil & pnpm setup:contracts"
 	},
 	"devDependencies": {
 		"@types/node": "^20.11.24",
