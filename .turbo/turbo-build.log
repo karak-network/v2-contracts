@@ -1,11 +1,0 @@
-
-
-> @repo/contracts@0.0.0 build /Users/drewpatel/repos/karak-restaking/packages/contracts
-> pnpm build:dev
-
-
-> @repo/contracts@0.0.0 build:dev /Users/drewpatel/repos/karak-restaking/packages/contracts
-> forge build --ast && tsx buildTsArtifacts.ts
-
-3[2K[1m[[32m⠃[0m][0m Compiling...3[2K[1m[[32m⠊[0m][0m Compiling...3[2K[1m[[32m⠒[0m][0m Compiling...
-3[2K[1m[[32m⠢[0m][0m Compiling 125 files with Solc 0.8.253[2K[1m[[32m⠆[0m][0m Compiling 125 files with Solc 0.8.253[2K[1m[[32m⠰[0m][0m Compiling 125 files with Solc 0.8.253[2K[1m[[32m⠔[0m][0m Compiling 125 files with Solc 0.8.253[2K[1m[[32m⠒[0m][0m Compiling 125 files with Solc 0.8.253[2K[1m[[32m⠑[0m][0m Compiling 125 files with Solc 0.8.253[2K[1m[[32m⠘[0m][0m Compiling 125 files with Solc 0.8.253[2K[1m[[32m⠃[0m][0m Compiling 125 files with Solc 0.8.253[2K[1m[[32m⠊[0m][0m Compiling 125 files with Solc 0.8.253[2K[1m[[32m⠒[0m][0m Compiling 125 files with Solc 0.8.253[2K[1m[[32m⠢[0m][0m Compiling 125 files with Solc 0.8.253[2K[1m[[32m⠆[0m][0m Compiling 125 files with Solc 0.8.253[2K[1m[[32m⠰[0m][0m Compiling 125 files with Solc 0.8.253[2K[1m[[32m⠔[0m][0m Compiling 125 files with Solc 0.8.253[2K[1m[[32m⠒[0m][0m Compiling 125 files with Solc 0.8.253[2K[1m[[32m⠑[0m][0m Compiling 125 files with Solc 0.8.253[2K[1m[[32m⠘[0m][0m Compiling 125 files with Solc 0.8.253[2K[1m[[32m⠃[0m][0m Compiling 125 files with Solc 0.8.253[2K[1m[[32m⠊[0m][0m Compiling 125 files with Solc 0.8.253[2K[1m[[32m⠒[0m][0m Compiling 125 files with Solc 0.8.253[2K[1m[[32m⠢[0m][0m Compiling 125 files with Solc 0.8.253[2K[1m[[32m⠆[0m][0m Compiling 125 files with Solc 0.8.253[2K[1m[[32m⠰[0m][0m Compiling 125 files with Solc 0.8.253[2K[1m[[32m⠔[0m][0m Compiling 125 files with Solc 0.8.253[2K[1m[[32m⠒[0m][0m Compiling 125 files with Solc 0.8.253[2K[1m[[32m⠑[0m][0m Compiling 125 files with Solc 0.8.253[2K[1m[[32m⠘[0m][0m Compiling 125 files with Solc 0.8.253[2K[1m[[32m⠃[0m][0m Compiling 125 files with Solc 0.8.25
